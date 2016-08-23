@@ -6,6 +6,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import models.Usuario;
 import models.dao.DaoUsuarios;
+import util.Hash;
 
 /**
  *
@@ -32,29 +34,40 @@ public class LoginServlet extends HttpServlet {
         
         
         Usuario usuario = new Usuario();
-        DaoUsuarios dao = new DaoUsuarios();
-        String correo = request.getParameter("correo");
-        String clave = request.getParameter("clave");
-        
-        if(!correo.isEmpty()){
-            if(!clave.isEmpty()){
+            DaoUsuarios dao = new DaoUsuarios();
+            String correo = request.getParameter("correo");
+            String clave = request.getParameter("clave");
+            
+            if(!correo.isEmpty() && !clave.isEmpty()){
                 usuario.setCorreo(correo);
-                usuario.setClave(clave);
-                boolean resultado = dao.login(usuario);
-
-                if(resultado){
-                    HttpSession session = request.getSession();
-                    session.setAttribute("correo", correo); 
-                    response.sendRedirect("admin/");
-                }else{
-                    response.sendRedirect("login.jsp");
+                try {                
+                    usuario.setClave(Hash.sha256(clave));
+                } catch (NoSuchAlgorithmException ex) {
+                    System.out.println("Error en hasheo" + ex);
                 }
+                usuario = dao.login(usuario);
+                
+                if(usuario != null){
+                    HttpSession session = request.getSession();
+                    usuario.setClave("");
+                    session.setAttribute("usuario", usuario);
+                    
+                    if(usuario.getRol().equals(Usuario.ADMINISTRADOR)){
+                        response.sendRedirect("/Usuarios/admin/consultar.jsp");
+                    }else if(usuario.getRol().equals(Usuario.EMPLEADO)){
+                        response.sendRedirect("/Usuarios/empleado/consultar.jsp");
+                    }else if(usuario.getRol().equals(Usuario.CLIENTE)){
+                        response.sendRedirect("/Usuarios/reserva.jsp");
+                    }
+                }else{
+                    response.getWriter().println("no se pudo");
+                }
+                
+                
             }else{
-                System.out.println("Debe ingresar una contraseña");
+                response.setStatus(400);
+                response.getWriter().println("Todos los campos son obligatorios");
             }
-        }else{
-            System.out.println("Debe ingresar un Correo");
-        }
         
     }
 

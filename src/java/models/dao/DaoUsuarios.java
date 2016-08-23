@@ -39,16 +39,26 @@ public class DaoUsuarios {
         return 0;
     }
     
-    public boolean login(Usuario usuario){
+    public Usuario login(Usuario usuario){
+        Conexion conexion = new Conexion();
         try{
-            Conexion conexion = new Conexion();
             PreparedStatement statement = conexion.prepareStatement("SELECT * FROM usuarios WHERE correo = ? AND clave = ? limit 1");
             statement.setString(1, usuario.getCorreo());
-            statement.setString(2, usuario.getClave());
+            statement.setString(2, usuario.getClave());            
             ResultSet result = statement.executeQuery();
-            return result.next();
+           if(result.next()){
+               usuario.setNombre(result.getString("nombres"));
+               usuario.setApellido(result.getString("apellidos"));
+               usuario.setCorreo(result.getString("correo"));
+               usuario.setClave(result.getString("clave"));
+               usuario.setRol(result.getString("rol"));
+               return usuario;
+           }else{
+               return null;
+           }          
         }catch(SQLException ex){
-            return false;
+            System.out.println("ERROR EN CATCH DE LOGIN" + ex.toString());
+            return null;
         }
        
     }

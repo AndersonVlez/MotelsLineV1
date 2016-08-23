@@ -8,10 +8,10 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Redes sociales</h5>
           <ul class="valign-wrapper">
-              <li><a class="grey-text text-lighten-3 valign" href="#!"><img src="/Servicios/img/icons/f2.png"></a></li>
-              <li><a class="grey-text text-lighten-3 valign" href="#!"><img src="/Servicios/img/icons/twitter.png"></a></li>
-              <li><a class="grey-text text-lighten-3" href="#!"><img src="/Servicios/img/icons/youtube.png"></a></li>
-              <li><a class="grey-text text-lighten-3" href="#!"><img src="/Servicios/img/icons/google.png"></a></li>
+              <li><a class="grey-text text-lighten-3 valign" href="#!"><img src="/MotelsLineV1/img/icons/f2.png"></a></li>
+              <li><a class="grey-text text-lighten-3 valign" href="#!"><img src="/MotelsLineV1/img/icons/twitter.png"></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"><img src="/MotelsLineV1/img/icons/youtube.png"></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"><img src="/MotelsLineV1/img/icons/google.png"></a></li>
           </ul>
         </div>
       </div>
