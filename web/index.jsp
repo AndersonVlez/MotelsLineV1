@@ -41,21 +41,21 @@
         <div class="slider">
     <ul class="slides">
       <li>
-          <img src="/Usuarios/img/motelsline.jpg"/>        
+          <img src="/MotelsLineV1/img/motelsline.jpg"/>        
         <div class="caption center-align">
           <h3>Bienvenido a MotelsLine</h3>
           <h5 class="light grey-text text-lighten-3">La forma mas fácil de reservar un motel</h5>
         </div>
       </li>
       <li>
-        <img src="/Usuarios/img/habitaciones1.jpg"> <!-- random image -->
+        <img src="/MotelsLineV1/img/habitaciones1.jpg">
         <div class="caption left-align">
           <h3>Elige las mejores habitaciones</h3>
           <h5 class="light grey-text text-lighten-3">Hay para todos los gustos</h5>
         </div>
       </li>
       <li>
-        <img src="/Usuarios/img/decorada.png"> <!-- random image -->
+        <img src="/MotelsLineV1/img/decorada.png"> 
         <div class="caption right-align">
           <h3>Elige los servicios que quieras</h3>
           <h5 class="light grey-text text-lighten-3">A los mejores precios</h5>
