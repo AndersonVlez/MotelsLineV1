@@ -19,8 +19,6 @@
    </head>
    <body>
       <section class="container">
-          <!-- aqui estaba la card -->
-          
         <div>
            <div class="row">
               <div class="col s4">
@@ -123,7 +121,7 @@
                                  <div class="row">
                                     <div class="valign-wrapper">
                                        <div class="col s6 valign center">
-                                          <img src="/MotelsLineV1/img/check.png"  alt="OK" />
+                                          <img src="/MotelsLineV1/img/check.png"  alt="OK"/>
                                        </div>
                                        <div class="col s6">
                                           <h2>Datos guardados correctamente</h2>

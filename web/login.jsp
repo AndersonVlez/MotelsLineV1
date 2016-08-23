@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                             <div class="btn-empl">
-                                <a href="registrar.jsp" >¿No tienes cuenta? Registrate!</a>
+                                <a href="/MotelsLineV1/registrar.jsp" >¿No tienes cuenta? Registrate!</a>
                             </div>
                         </form>
                     </div>                      
