@@ -123,7 +123,7 @@
                                  <div class="row">
                                     <div class="valign-wrapper">
                                        <div class="col s6 valign center">
-                                          <img src="/Servicios/img/check.png"  alt="OK" />
+                                          <img src="/MotelsLineV1/img/check.png"  alt="OK" />
                                        </div>
                                        <div class="col s6">
                                           <h2>Datos guardados correctamente</h2>
@@ -138,7 +138,7 @@
                                  <div class="row">
                                     <div class="valign-wrapper">
                                        <div class="col s6 valign center">
-                                          <img src="/Servicios/img/error.png"  alt="ERROR" />
+                                          <img src="/MotelsLineV1/img/error.png"  alt="ERROR" />
                                        </div>
                                        <div class="col s6">
                                           <h2>Error guardando datos</h2>
