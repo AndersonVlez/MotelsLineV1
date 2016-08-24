@@ -24,6 +24,7 @@
         </script>
     </head>
     <body>
+        <main>
         <header>
             <nav>
                 <div class="nav-wrapper blue-grey darken-3">
@@ -65,6 +66,7 @@
       </li>
       </ul>
         </div>
+        </main>
         <%@include file="admin/footer.jsp" %>
     </body>
 </html>
