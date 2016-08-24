@@ -53,6 +53,7 @@
         <title>Habitaciones</title>
     </head>
     <body>
+        
         <header>
             <header>
             <nav>
@@ -82,35 +83,35 @@
         <div class="slider">
     <ul class="slides">
       <li>
-        <img src="/MotelsLine/img/img1.jpg"> <!-- random image -->
+        <img src="/MotelsLineV1/img/img1.jpg"> <!-- random image -->
         <div class="caption center-align">
           <h3>Bienvenido a MotelsLine</h3>
           <h5 class="light grey-text text-lighten-3">La forma mas fácil de reservar un motel</h5>
         </div>
       </li>
       <li>
-        <img src="/MotelsLine/img/img2.jpg"> <!-- random image -->
+        <img src="/MotelsLineV1/img/img2.jpg"> <!-- random image -->
         <div class="caption left-align">
           <h3>Elige las mejores habitaciones</h3>
           <h5 class="light grey-text text-lighten-3">Hay para todos los gustos</h5>
         </div>
       </li>
       <li>
-        <img src="/MotelsLine/img/img3.jpg"> <!-- random image -->
+        <img src="/MotelsLineV1/img/img3.jpg"> <!-- random image -->
         <div class="caption right-align">
           <h3>Elige los servicios que quieras</h3>
           <h5 class="light grey-text text-lighten-3">A los mejores precios</h5>
         </div>
       </li>
       <li>
-        <img src="/MotelsLine/img/img4.jpg"> <!-- random image -->
+        <img src="/MotelsLineV1/img/img4.jpg"> <!-- random image -->
         <div class="caption center-align">
           <h3>has tu mejor reserva</h3>
           <h5 class="light grey-text text-lighten-3"> En simples pasos</h5>
         </div>
       </li>
       <li>
-        <img src="/MotelsLine/img/slider.jpg"> <!-- random image -->
+        <img src="/MotelsLineV1/img/slider.jpg"> <!-- random image -->
         <div class="caption right-align">
           <h3>MotelsLine</h3>
           <h5 class="light grey-text text-lighten-3"></h5>
@@ -118,9 +119,7 @@
       </li>
     </ul>
   </div>
-
-
-        <main>
+            <main>
             <section class="container">
                 <h1 class="center-align">HABITACIÓNES</h1>
               <!--  <img src="img/HABITACIONES.png">-->
@@ -180,29 +179,6 @@
                 
             </section>
         </main>
-        <footer class="page-footer blue-grey darken-3">
-            <div class="container">
-              <div class="row">
-                <div class="col l6 s12">
-                  <h5 class="white-text">MotelsLine</h5>
-                  <p class="grey-text text-lighten-4">Dirección: </p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                  <h5 class="white-text">Contactenos</h5>
-                  <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!"><img src="../img/icons/f2.png"></a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!"><img src="../img/icons/twitter.png"></a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!"><img src="../img/icons/youtube.png"></a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!"><img src="../img/icons/google.png"></a></li>
-                </div>
-              </div>
-            </div>
-            <div class="footer-copyright blue-grey darken-4">
-              <div class="container">
-              © 2016 Copyright MotelsLine
-              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-              </div>
-            </div>
-        </footer>
+                <%@include file="../admin/footer.jsp"%>
     </body>
 </html>

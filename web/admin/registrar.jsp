@@ -120,17 +120,13 @@
                               <div  id="ok" class="hide">
                                  <div class="row">
                                     <div class="valign-wrapper">
-                                       <div class="col s6 valign center">
-<<<<<<< HEAD
-                                          <img src="/MotelsLineV1/img/check.png"  alt="OK" />
-=======
-                                          <img src="/MotelsLineV1/img/check.png"  alt="OK"/>
->>>>>>> ea731570a98a98d6843a09931b9c2cbf03143818
-                                       </div>
+                                            <div class="col s6 valign center">
+                                            <img src="/MotelsLineV1/img/check.png"  alt="OK" />
+                                            </div>
                                        <div class="col s6">
                                           <h2>Datos guardados correctamente</h2>
                                           <p>
-                                             Los datos han sido guardados correctamente, ahora puede iniciar sesión <a href="#">aquí</a>
+                                             Los datos han sido guardados correctamente, ahora puede iniciar sesión <a href="../login.jsp">aquí</a>
                                           </p>
                                        </div>
                                     </div>
