@@ -30,7 +30,7 @@
                     <a href="index.jsp" class="brand-logo"><img src="img/img.png"></a>
                     <div class="container">
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                           <li class="active"><a href="index.jsp">Inicio</a></li>
+                           <li class="active"><a href="index.jsp">guerri</a></li>
                            <li><a href="#">Motel</a></li>
                            <li><a href="usuario/habitaciones.jsp">Habitaciones</a></li>
                            <li><a href="#">Reservas</a></li>
