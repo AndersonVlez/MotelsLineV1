@@ -14,6 +14,8 @@
         <link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>     
         <script src="js/jquery-3.0.0.min.js" type="text/javascript"></script>
         <script src="js/materialize.min.js" type="text/javascript"></script>
+        <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <script src="js/sweetalert.min.js" type="text/javascript"></script>
         <script>
             $(document).ready(function(){                
                 $('form').submit(function(evento) {
@@ -33,7 +35,7 @@
                            confirmar: $("#cclave").val()
                        },
                        success: function(response){
-                           alert("Usuario registrado correctamente");
+                           swal("Registro","Usuario registrado correctamente","success");
                            $("#nombre").val("");
                             $("#apellido").val("");
                             $("#cedula").val("");
@@ -42,7 +44,7 @@
                             $('#cclave').val("");
                        },
                        error: function(respuesta) {
-                           alert(respuesta.responseText);
+                           swal("Error", respuesta.responseText, "error");
                        }
                     });
                 });

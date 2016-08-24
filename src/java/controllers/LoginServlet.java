@@ -53,11 +53,19 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("usuario", usuario);
                     
                     if(usuario.getRol().equals(Usuario.ADMINISTRADOR)){
+<<<<<<< HEAD
                         response.sendRedirect("/MotelsLineV1/admin");
                     }else if(usuario.getRol().equals(Usuario.EMPLEADO)){
                         response.sendRedirect("/MotelsLineV1/empleados/modificar.jsp");
                     }else if(usuario.getRol().equals(Usuario.CLIENTE)){
                         response.sendRedirect("/MotelsLineV1/usuario/reservas.jsp");
+=======
+                        response.sendRedirect("/MotelsLineV1/admin/index.jsp");
+                    }else if(usuario.getRol().equals(Usuario.EMPLEADO)){
+                        response.sendRedirect("/MotelsLineV1/empleado/consultar.jsp");
+                    }else if(usuario.getRol().equals(Usuario.CLIENTE)){
+                        response.sendRedirect("/MotelsLineV1/reserva.jsp");
+>>>>>>> ea731570a98a98d6843a09931b9c2cbf03143818
                     }
                 }else{
                     response.getWriter().println("no se pudo");

@@ -46,8 +46,7 @@ $(document).ready(function(){
       }).removeClass("red").addClass("blue");
    });
 
-   $("#guardar").click(function(){
-       
+   $("#guardar").click(function(){       
       
       formAdmin.addClass("hide");
       preloader.removeClass("hide");
