@@ -1,23 +1,21 @@
 <%-- 
-    Document   : eliminart
-    Created on : 04-jul-2016, 14:23:02
-    Author     : Cleyber
+    Document   : eliminar
+    Created on : 03-jul-2016, 20:22:57
+    Author     : Anderson Velez
 --%>
 
-
-
-<%@page import="models.dao.DaoServicios"%>
+<%@page import="models.dao.DaoHabitaciones"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="models.Habitaciones"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page  import="models.Servicios"%>
-<%@page  import="java.util.ArrayList"%>
-<%@page  import="java.util.List"%>
 
 <%
-    ArrayList<Servicios> list = new ArrayList();
-    DaoServicios dao = new DaoServicios();    
+    ArrayList<Habitaciones> list = new ArrayList();
+    DaoHabitaciones dao = new DaoHabitaciones();    
     
     list = dao.consultarAll();
 %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,16 +29,22 @@
         <script src="../../js/materialize.min.js" type="text/javascript"></script>
         <script src="../../js/sweetalert.min.js" type="text/javascript"></script>
         <link href="../../css/sweetalert.css" rel="stylesheet" type="text/css"/>
-        <title>Eliminar Servicio</title>
+        <title>Eliminar Habitacion</title>
+        <style>
+            h1 {
+            font-family: fantasy;
+            color: #e53935;
+            }
+        </style>
         <script>
             $(document).ready(function(){
                 $(".button-collapse").sideNav(); 
                 $(".dropdown-button").dropdown();
-            });
+                });
             function eliminar(id){   
                 swal({
                    title: "Eliminar",
-                   text: "¿Esta seguro que desea eliminar el servicio?",
+                   text: "¿Esta seguro que desea eliminar la habitacion?",
                    type: "warning",
                    allowOutsideClick: true,
                    showCancelButton: true,
@@ -51,13 +55,13 @@
                    showLoaderOnConfirm: true
                 }, function(){
                     $.ajax({
-                        url: "../../EliminarServicioServlet",
+                        url: "../../EliminarHabitacionServlet",
                         method: "post",
                         data:{
                             id: id
                         },
                         success: function(){
-                            swal("Eliminado","Servicio eliminado correcatamente", "success");
+                            swal("Eliminado","Habitación eliminadas correcatamente", "success");
                             $("#" + id).remove();
                         },
                         error: function(respuesta){
@@ -66,42 +70,41 @@
                    });
                 });
             }
-            
         </script>
     </head>
     <body>
         <%@include file="../menu.jsp" %>
         <main>
-            <section class="container">            
-                <table class="striped centered">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Descripción</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%
-                            for(int i = 0; i < list.size(); i++){
-                        %>
-                        <tr id="<%= list.get(i).getId()%>">
-                            <td><%= list.get(i).getNombre()%></td>
-                            <td><%= list.get(i).getPrecio()%></td>
-                            <td><%= list.get(i).getDescripcion()%></td>
-                            <td><a href="modificar.jsp?servicio=<%= list.get(i).getId()%>" class="btn teal lighten-1"><i class="fa fa-pencil-square-o"></i></a></td>
-                            <td><button onclick="eliminar(<%= list.get(i).getId()%>)" class="btn waves-effect red"><i class="fa fa-trash-o"></i></button></td>                        
-                        </tr>
-                        <%
+            <section class="container">
+                <h1 class="center-align">Eliminar habitación</h1>
+                <article>
+                    <h4 class="center-align">Ingrese el nombre de la habitacion para eliminarla.</h4> 
+                </article>
+                <div class="row">
+                    <form class="col m8 offset-m2 center-align" id="form-eliminar">
+                        <div class="input-field">
+                            <label for="id">ID</label>
+                            <input type="number" class="validate" name="id" id="id">
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <%
+                            for(int i = 1; i < list.size(); i++ ){
+                                 %>
+                                 
+                                 <button onclick="eliminar<%= list.get(i).getId()%>"> Eliminar</button>
+                                 <%
                             }
-                        %>
-                    </tbody>
-                </table>
-            </section>
+                                  %>
+                            </div>
+                            <div class="col s6">
+                                <a href="/MotelsLine/admin" id="cancelar" class="btn red waves-effect btn-style">Cancelar</a>
+                            </div>
+                       </div>
+                    </form>
+                </div>
+            </section>            
         </main>
+        <%@include file="../footer.jsp" %>
     </body>
-    <%@include file="../footer.jsp" %>
 </html>

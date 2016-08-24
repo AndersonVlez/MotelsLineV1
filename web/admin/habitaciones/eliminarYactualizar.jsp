@@ -1,20 +1,20 @@
 <%-- 
-    Document   : eliminart
+    Document   : eliminarYactualizar
     Created on : 04-jul-2016, 14:23:02
-    Author     : Cleyber
+    Author     : Anderson Velez
 --%>
 
 
 
-<%@page import="models.dao.DaoServicios"%>
+<%@page import="models.dao.DaoHabitaciones"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page  import="models.Servicios"%>
+<%@page  import="models.Habitaciones"%>
 <%@page  import="java.util.ArrayList"%>
 <%@page  import="java.util.List"%>
 
 <%
-    ArrayList<Servicios> list = new ArrayList();
-    DaoServicios dao = new DaoServicios();    
+    ArrayList<Habitaciones> list = new ArrayList();
+    DaoHabitaciones dao = new DaoHabitaciones();    
     
     list = dao.consultarAll();
 %>
@@ -31,7 +31,7 @@
         <script src="../../js/materialize.min.js" type="text/javascript"></script>
         <script src="../../js/sweetalert.min.js" type="text/javascript"></script>
         <link href="../../css/sweetalert.css" rel="stylesheet" type="text/css"/>
-        <title>Eliminar Servicio</title>
+        <title>Eliminar Habitacion</title>
         <script>
             $(document).ready(function(){
                 $(".button-collapse").sideNav(); 
@@ -40,7 +40,7 @@
             function eliminar(id){   
                 swal({
                    title: "Eliminar",
-                   text: "¿Esta seguro que desea eliminar el servicio?",
+                   text: "¿Esta seguro que desea eliminar la habitacion?",
                    type: "warning",
                    allowOutsideClick: true,
                    showCancelButton: true,
@@ -51,13 +51,13 @@
                    showLoaderOnConfirm: true
                 }, function(){
                     $.ajax({
-                        url: "../../EliminarServicioServlet",
+                        url: "../../EliminarHabitacionServlet",
                         method: "post",
                         data:{
                             id: id
                         },
                         success: function(){
-                            swal("Eliminado","Servicio eliminado correcatamente", "success");
+                            swal("Eliminado","Habitación eliminadas correcatamente", "success");
                             $("#" + id).remove();
                         },
                         error: function(respuesta){
@@ -77,9 +77,13 @@
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Precio</th>
+                            <th>Numero de habitacion</th>
                             <th>Descripción</th>
-                            <th>Editar</th>
+                            <th>Precio</th>
+                            <th>cantidad de horas</th>
+                            <th>hora adicional</th>
+                            <th>Persona adicional</th>
+                            <th>Actualizar</th>
                             <th>Eliminar</th>
 
                         </tr>
@@ -90,9 +94,13 @@
                         %>
                         <tr id="<%= list.get(i).getId()%>">
                             <td><%= list.get(i).getNombre()%></td>
-                            <td><%= list.get(i).getPrecio()%></td>
+                            <td><%= list.get(i).getCantidad()%></td>
                             <td><%= list.get(i).getDescripcion()%></td>
-                            <td><a href="modificar.jsp?servicio=<%= list.get(i).getId()%>" class="btn teal lighten-1"><i class="fa fa-pencil-square-o"></i></a></td>
+                            <td><%= list.get(i).getPrecio()%></td>
+                            <td><%= list.get(i).getCantidadHoras()%></td>
+                            <td><%= list.get(i).getHoraAdicional()%></td>
+                            <td><%= list.get(i).getPersonaAdicional()%></td>
+                            <td><a href="actualizar.jsp?habitacion=<%= list.get(i).getId()%>" class="btn waves-effect teal lighten-1"><i class="fa fa-pencil-square-o"></i></a></td>
                             <td><button onclick="eliminar(<%= list.get(i).getId()%>)" class="btn waves-effect red"><i class="fa fa-trash-o"></i></button></td>                        
                         </tr>
                         <%

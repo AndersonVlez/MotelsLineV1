@@ -53,8 +53,9 @@
     <body>
         <header>
             <nav>
-                <div class="nav-wrapper red">
+                <div class="nav-wrapper blue-grey darken-3">
                     <a href="index.jsp" class="brand-logo"><img src="img/img.png"></a>
+                    <div class="container">
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.jsp">Inicio</a></li>
                     <li><a href="#">Motel</a></li>
@@ -62,6 +63,7 @@
                     <li><a href="#">Reservas</a></li>
                     <li><a href="login.jsp">Ingresar</a></li>
                   </ul>
+                    </div>
                 </div>
             </nav>    
         </header>

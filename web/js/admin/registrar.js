@@ -53,7 +53,7 @@ $(document).ready(function(){
       preloader.removeClass("hide");
       
       $.ajax({
-         url: "/Servicios/RegistrarAdminServlet",
+         url: "/MotelsLineV1/RegistrarAdminServlet",
          method: "post",
          data:{
             motel: JSON.stringify({

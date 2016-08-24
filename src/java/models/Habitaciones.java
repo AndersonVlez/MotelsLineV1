@@ -5,9 +5,11 @@
  */
 package models;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author Cleyber
+ * @author Anderson Velez
  */
 public class Habitaciones {
     private int id;
@@ -18,11 +20,12 @@ public class Habitaciones {
     private int cantidadHoras;
     private double horaAdicional;
     private double personaAdicional;
+    private ArrayList<Imagen> imagenes;
     
     public Habitaciones(){
     }
-    
-    public Habitaciones(int id, String nombre, int cantidad, String descripcion, double precio, int cantidadHoras, double horaAdicional, double personaAdicional){
+
+    public Habitaciones(int id, String nombre, int cantidad, String descripcion, double precio, int cantidadHoras, double horaAdicional, double personaAdicional, ArrayList<Imagen> imagenes) {
         this.id = id;
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -31,70 +34,83 @@ public class Habitaciones {
         this.cantidadHoras = cantidadHoras;
         this.horaAdicional = horaAdicional;
         this.personaAdicional = personaAdicional;
+        this.imagenes = imagenes;
     }
-    
-    public void setId(int id){
-        this.id= id;
-    }
-    
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    
-    public void setNombre(String nombre){
-        this.nombre = nombre;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    
-    public String getNombre(){
+
+    public String getNombre() {
         return nombre;
     }
-    
-    public void setCantidad(int cantidad){
-        this.cantidad = cantidad;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
-    public int getCantidad(){
+
+    public int getCantidad() {
         return cantidad;
     }
-    
-    public void setDescripcion(String descripcion){
-        this.descripcion = descripcion;
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
-    
-    public String getDescripcion(){
+
+    public String getDescripcion() {
         return descripcion;
     }
-    
-    public void setPrecio(double precio){
-        this.precio = precio;
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-    
-    public double getPrecio(){
+
+    public double getPrecio() {
         return precio;
     }
-    
-    public void setCantidadHoras(int cantidadHoras){
-        this.cantidadHoras = cantidadHoras;
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
-    
-    public int getCantidadHoras(){
+
+    public int getCantidadHoras() {
         return cantidadHoras;
     }
-    
-    public void setHoraAdicional(double horaAdicional){
-        this.horaAdicional = horaAdicional;
+
+    public void setCantidadHoras(int cantidadHoras) {
+        this.cantidadHoras = cantidadHoras;
     }
-    
-    public double getHoraAdicional(){
+
+    public double getHoraAdicional() {
         return horaAdicional;
     }
-    
-    public void setPersonaAdicional(double personaAdicional){
+
+    public void setHoraAdicional(double horaAdicional) {
+        this.horaAdicional = horaAdicional;
+    }
+
+    public double getPersonaAdicional() {
+        return personaAdicional;
+    }
+
+    public void setPersonaAdicional(double personaAdicional) {
         this.personaAdicional = personaAdicional;
     }
+
+    public ArrayList<Imagen> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(ArrayList<Imagen> imagenes) {
+        this.imagenes = imagenes;
+    }
     
-    public double getPersonaAdicional(){
-        return personaAdicional;
+    public void addImagen(Imagen nombre){
+        this.imagenes.add(nombre);
     }
     
 }

@@ -28,6 +28,13 @@
         <script src="../../js/materialize.min.js" type="text/javascript"></script>
         <script src="../../js/sweetalert.min.js" type="text/javascript"></script>
         <link href="../../css/sweetalert.css" rel="stylesheet" type="text/css"/>
+        
+        <style>
+            h1 {
+            font-family: fantasy;
+            color: #e53935;
+            }
+        </style>
         <script>
             $(document).ready(function(){
                 $(".button-collapse").sideNav(); 
@@ -39,27 +46,32 @@
                 
                 $("#guardar").click(function(){
                     $.ajax({
-                        url: "../../RegistrarServicioServlet",
+                        url: "../../RegistrarHabitacionServlet",
                         method: "post",
                         data: {
                             nombre: $('#nombre').val(),
+                            cantidad: $('#cantidad').val(),
+                            descripcion: $('#descripcion').val(),
                             precio: $('#precio').val(),
-                            descripcion: $('#descripcion').val()                           
+                            cantidadHoras: $('#cantidadHoras').val(),
+                            horaAdicional: $('#horaAdicional').val(),
+                            personaAdicional: $('#personaAdicional').val()
+                                                      
                         },
                         success: function(id){                            
                             swal({
                                title: "Registro",
-                               text: "El servicio se ha registrado correctamente",
+                               text: "La habitacion se ha registrado exitosamente",
                                type: "success"                               
                             },
                                 function(){
-                                    window.location = "/MotelsLineV1/admin/servicios/imagenes.jsp?id=" + id;
+                                    window.location = "/MotelsLineV1/admin/habitaciones/imagenes.jsp?id=" + id;
                                 }
                             );
                                                          
                         },
                         error: function(respuesta){                            
-                            sweetAlert("Error", respuesta.responseText, "error");
+                            sweetAlert("ERROR", respuesta, "error");
                         }                        
                     });
                 });
@@ -71,22 +83,40 @@
         <%@include file="../menu.jsp" %>
         <main>
             <section class="container">                
-                <h1 class="center-align">Registrar servicio</h1>
+                <h1 class="center-align">Registrar habitación</h1>
+                <br>
+                <div class="divider"></div>
                     <div class="row">
                         
                         <form class="col m8 offset-m2 center-align">
                             <div class="input-field">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre">
-                            </div> 
+                            </div>
+                            <div class="input-field">
+                                <label for="cantidad">Numero de habitación</label>
+                                <input type="number" id="cantidad" name="cantidad">
+                            </div>
                             <div class="input-field">
                                 <label for="precio">Precio</label>
                                 <input type="number" id="precio" name="precio">
                             </div>
                             <div class="input-field">
+                                <label for="cantidadHoras">Cantidad de horas</label>
+                                <input type="number" id="cantidadHoras" name="cantidadHoras">
+                            </div>
+                            <div class="input-field">
+                                <label for="horaAdicional">Hora adicional</label>
+                                <input type="number" id="horaAdicional" name="horaAdicional">
+                            </div>
+                            <div class="input-field">
+                                <label for="personaAdicional">Persona adicional</label>
+                                <input type="number" id="personaAdicional" name="personaAdicional">
+                            </div>
+                            <div class="input-field">
                                 <label for="descripcion">Descripción</label>
                                 <textarea id="descripcion" class="materialize-textarea"></textarea>
-                            </div> 
+                            </div>
                             <div class="row">
                                 <div class="col s6">
                                     <button class="btn waves-effect" id="guardar">Guardar</button>

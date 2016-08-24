@@ -40,6 +40,22 @@
         <servlet-name>RegistrarAdminServlet</servlet-name>
         <servlet-class>controllers.RegistrarAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegistrarHabitacionServlet</servlet-name>
+        <servlet-class>controllers.RegistrarHabitacionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarImagenHabitacionServlet</servlet-name>
+        <servlet-class>controllers.EliminarImagenHabitacionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarHabitacionServlet</servlet-name>
+        <servlet-class>controllers.EliminarHabitacionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarHabitacionServlet</servlet-name>
+        <servlet-class>controllers.ActualizarHabitacionServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -79,6 +95,23 @@
     <servlet-mapping>
         <servlet-name>RegistrarAdminServlet</servlet-name>
         <url-pattern>/RegistrarAdminServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>RegistrarHabitacionServlet</servlet-name>
+        <url-pattern>/RegistrarHabitacionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarImagenHabitacionServlet</servlet-name>
+        <url-pattern>/EliminarImagenHabitacionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarHabitacionServlet</servlet-name>
+        <url-pattern>/EliminarHabitacionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarHabitacionServlet</servlet-name>
+        <url-pattern>/ActualizarHabitacionServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

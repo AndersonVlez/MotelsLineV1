@@ -11,10 +11,10 @@
                     <li class="menu-habitaciones">                        
                         <a href="#!" class="dropdown-button" data-activates="dropdown-habitaciones" ><i class="fa fa-bed "></i> Habitaciones<i class="material-icons right">arrow_drop_down</i></a>                                
                         <ul id="dropdown-habitaciones" class="dropdown-content">
-                            <li><a href="#"><i class="fa fa-plus"></i> Registrar</a></li>
-                            <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>
-                            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Modificar</a></li>
-                            <li><a href="#"><i class="fa fa-trash-o "></i> Eliminar</a></li>
+                            <li><a href="/MotelsLineV1/admin/habitaciones/registrar.jsp"><i class="fa fa-plus"></i> Registrar</a></li>
+                            <li><a href="/MotelsLineV1/usuario/habitaciones.jsp"><i class="fa fa-list"></i> Listar</a></li>
+                            <li><a href="/MotelsLineV1/admin/habitaciones/eliminarYactualizar.jsp"><i class="fa fa-pencil-square-o"></i> Modificar</a></li>
+                            <li><a href="/MotelsLineV1/admin/habitaciones/eliminar.jsp"><i class="fa fa-trash-o "></i> Eliminar</a></li>
                         </ul>
                     </li>
                     <!-- Servicios--> 
@@ -49,11 +49,11 @@
                     <!-- Habitaciones-->
                     <li class="menu-habitaciones">                        
                         <a href="#!" class="dropdown-button" data-activates="dropdown-habitaciones-mobile" ><i class="fa fa-bed "></i> Habitaciones<i class="material-icons right">arrow_drop_down</i></a>                                
-                        <ul id="dropdown-habitaciones-mobile" class="dropdown-content">
-                            <li><a href="#"><i class="fa fa-plus"></i> Registrar</a></li>
-                            <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>
-                            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Modificar</a></li>
-                            <li><a href="#"><i class="fa fa-trash-o "></i> Eliminar</a></li>
+                        <ul id="dropdown-habitaciones" class="dropdown-content">
+                            <li><a href="/MotelsLineV1/admin/habitaciones/registrar.jsp"><i class="fa fa-plus"></i> Registrar</a></li>
+                            <li><a href="/MotelsLineV1/usuario/habitaciones.jsp"><i class="fa fa-list"></i> Listar</a></li>
+                            <li><a href="/MotelsLineV1/admin/habitaciones/eliminarYactualizar.jsp"><i class="fa fa-pencil-square-o"></i> Modificar</a></li>
+                            <li><a href="/MotelsLineV1/admin/habitaciones/eliminar.jsp"><i class="fa fa-trash-o "></i> Eliminar</a></li>
                         </ul>
                     </li>
                     <!-- Servicios-->

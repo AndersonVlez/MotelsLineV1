@@ -11,13 +11,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import models.Imagen;
+import models.dao.DaoHabitaciones;
 
 /**
  *
- * @author Anderson Velez
+ * @author Sena
  */
-public class LogoutServlet extends HttpServlet {
+public class EliminarImagenHabitacionServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +37,10 @@ public class LogoutServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Logout</title>");            
+            out.println("<title>Servlet EliminarImagenHabitacionServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Logout at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EliminarImagenHabitacionServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,10 +58,7 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.setAttribute("correo", "");
-        //session.invalidate();
-        response.sendRedirect("/MotelsLineV1/login.jsp");
+        processRequest(request, response);
     }
 
     /**
@@ -74,7 +72,12 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Imagen imagen = new Imagen();
+        DaoHabitaciones dao = new DaoHabitaciones();
         
+        imagen.setId(id);
+        dao.eliminarImagen(imagen);
     }
 
     /**

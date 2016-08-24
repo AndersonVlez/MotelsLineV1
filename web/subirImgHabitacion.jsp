@@ -1,3 +1,11 @@
+<%-- 
+    Document   : subirImgHabitacion
+    Created on : 17/08/2016, 02:29:20 PM
+    Author     : Sena
+--%>
+
+<%@page import="models.Habitaciones"%>
+<%@page import="models.dao.DaoHabitaciones"%>
 <%@page import="models.Imagen"%>
 <%@page import="models.Servicios"%>
 <%@page import="java.sql.*"%>
@@ -14,8 +22,8 @@
  
 <%
         int id = Integer.parseInt(request.getParameter("id"));
-        DaoServicios dao = new DaoServicios();
-        Servicios servicio = dao.consultar(id); 
+        DaoHabitaciones dao = new DaoHabitaciones();
+        Habitaciones habitacion = dao.consultar(id); 
     
         /*FileItemFactory es una interfaz para crear FileItem*/
         FileItemFactory file_factory = new DiskFileItemFactory();
@@ -43,10 +51,10 @@
                     
                     Imagen imagen = new Imagen();
                     imagen.setNombre(nombre);
-                    servicio.addImagen(imagen);
+                    habitacion.addImagen(imagen);
 
 
-                    /*cual sera la ruta al archivo en el servidor*/
+                    /*la cual sera la ruta al archivo en el servidor*/
                     File imagenes = new File(getServletContext().getRealPath("") + "/imgServidor/" + nombre);
                     File backupImagenes = new File(getServletContext().getRealPath("") + "/../../backupImgServidor/" + nombre);
                 
@@ -75,7 +83,7 @@
             }
         }
         
-        dao.insertarImagenes(servicio);
-        response.sendRedirect("/MotelsLineV1/admin/servicios/imagenes.jsp?id=" + id);
+        dao.insertarImagenes(habitacion);
+        response.sendRedirect("/MotelsLineV1/admin/habitaciones/imagenes.jsp?id=" + id);
 
 %>

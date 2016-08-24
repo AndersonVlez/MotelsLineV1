@@ -16,9 +16,9 @@ public class Conexion {
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            this.conex = DriverManager.getConnection("jdbc:mysql://localhost/motelslinejsp","root", "");
+            this.conex = DriverManager.getConnection("jdbc:mysql://localhost/motelsline","root", "");
         } catch (Exception ex) {
-            System.out.println("Error en conexion a base de datos");
+            System.out.println("Error en la conexion a la base de datos");
         }
         
     }
